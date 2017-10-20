@@ -11,4 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32385a4cf2bec4a4497e15a1e1112857, type: 3}
   m_Name: CharacterStatus
   m_EditorClassIdentifier: 
-  _list: []
+  _list:
+  - Hp: 10
+    AttackPowerBias: 10
+    MoveSpeed: 5

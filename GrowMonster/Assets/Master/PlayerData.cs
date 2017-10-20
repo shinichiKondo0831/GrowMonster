@@ -11,15 +11,15 @@ namespace ShinHachi
         [SerializeField]
         List<PlayerDataList> _list = new List<PlayerDataList>();
 
-        //public PlayerDataList GetData(int id)
-        //{
-        //    if (_list.Count < id || id >= 0)
-        //    {
-        //        return _list[id];
-        //    }
+        public PlayerDataList GetData(int id)
+        {
+            if (_list.Count < id || id >= 0)
+            {
+                return _list[id];
+            }
 
-        //    return null;
-        //}
+            return null;
+        }
 
         public int GetLength()
         {
