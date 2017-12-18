@@ -2,38 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+// PlayerInfoのスクリプトを一緒にアタッチできるようにする
+[RequireComponent(typeof(PlayerInfo))]
+public class PlayerController : MonoBehaviour
+{
+    ShinHachi.PlayerStatus data_ = new ShinHachi.PlayerStatus();
 
-    // プレイヤーの内部データ
-    ShinHachi.PlayerStatus _data = null;
-    public ShinHachi.PlayerStatus PlayerData
+    // Use this for initialization
+    void Start ()
     {
-        get { return _data; }
+        data_ = GetComponent<PlayerInfo>().Data;
     }
-
-
-	// Use this for initialization
-	void Start () {
-
-        _data = new ShinHachi.PlayerStatus();
-        ShinHachi.PlayerData.PlayerDataList data = null;
-
-        _data.MaxHealth = data.Hp;
-        _data.Health    = _data.Health;
-        _data.Power     = data.AttackPowerBias;
-        _data.Velocity = data.MoveSpeed;
-    }
-	
-	// Update is called once per frame
-	void Update () {
-
-
-        Vector3 move = transform.position;
-        move.z += _data.Velocity;
-        if(Input.GetKey(KeyCode.LeftArrow))
+  
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position = move;
+            transform.position += transform.right * data_.Speed * Time.deltaTime;
         }
-		
-	}
+
+        else if(Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.position -= transform.right * data_.Speed * Time.deltaTime;
+        }
+
+        if(Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.position += transform.forward * data_.Speed * Time.deltaTime;
+        }
+
+        else if(Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.position -= transform.forward * data_.Speed * Time.deltaTime;
+        }
+
+    }
 }

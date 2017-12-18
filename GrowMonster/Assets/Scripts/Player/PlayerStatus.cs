@@ -21,13 +21,13 @@ namespace ShinHachi
             {
                 this._health = health;
                 this._power = power;
-                this._velocity = velocity;
+                this._speed = velocity;
                 this._maxHealth = maxHealth;
             }
 
             //-------プロパティ内部変数-----------------//
             // プレイヤーの速度
-            public float _velocity = 0.0f;
+            public float _speed = 0.0f;
 
             // プレイヤーの力
             public int _power = 0;
@@ -64,12 +64,12 @@ namespace ShinHachi
         /// <summary>
         /// スピード
         /// </summary>
-        public float Velocity
+        public float Speed
         {
-            get { return _data._velocity; }
+            get { return _data._speed; }
             set
             {
-                _data._velocity = value;
+                _data._speed = value;
             }
         }
 
