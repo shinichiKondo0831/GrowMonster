@@ -640,6 +640,7 @@ GameObject:
   - component: {fileID: 2040763211}
   - component: {fileID: 2040763210}
   - component: {fileID: 2040763209}
+  - component: {fileID: 2040763215}
   - component: {fileID: 2040763214}
   m_Layer: 0
   m_Name: Player
@@ -661,7 +662,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!23 &2040763210
 MeshRenderer:
@@ -737,6 +738,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 488cdba97ca91d04791e3e9f2300287e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2040763215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2040763208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cc9c4e6f7864d840b538f63e1c2c505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   csvName_: CharacterData
