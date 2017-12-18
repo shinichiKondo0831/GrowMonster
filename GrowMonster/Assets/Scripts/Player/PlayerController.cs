@@ -26,6 +26,14 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
+        Vector3 move = transform.position;
+        move.z += _data.Velocity;
+        if(Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.position = move;
+        }
 		
 	}
 }
