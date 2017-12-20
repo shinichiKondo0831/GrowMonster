@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.position += transform.right * data_.Speed * Time.deltaTime;
+            //transform.rotation += transform.right * data_.Speed * Time.deltaTime;
         }
 
         else if(Input.GetKey(KeyCode.LeftArrow))
