@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 79208425}
   - component: {fileID: 79208424}
   - component: {fileID: 79208423}
+  - component: {fileID: 79208422}
   m_Layer: 0
   m_Name: Training
   m_TagString: Untagged
@@ -212,6 +213,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &79208422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 79208421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b49e7a5c00f894987eeb4493dd1ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &79208423
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -251,7 +263,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 79208421}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -415,7 +427,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 684150960}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -498,7 +510,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1288737298}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -814,3 +826,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8ae19db320d6543a6306d97d3f3eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionEvent_: {fileID: 0}
+  training_: {fileID: 0}

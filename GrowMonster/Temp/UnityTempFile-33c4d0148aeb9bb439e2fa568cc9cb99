@@ -94,9 +94,14 @@
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
 -define:ENABLE_VSTU
+Assets/Scripts/Event/CharcterEvent.cs
+Assets/Scripts/Manager/CollisionManager/CollisionManager.cs
+Assets/Scripts/Manager/GameManager.cs
+Assets/Scripts/Manager/TimeProcessManager/TimeProcessManager.cs
 Assets/Scripts/Player/PlayerController.cs
 Assets/Scripts/Player/PlayerInfo.cs
 Assets/Scripts/Player/PlayerStatus.cs
+Assets/Scripts/Training/Training.cs
 Assets/Scripts/Utility/CSVReader.cs
 -r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll"
