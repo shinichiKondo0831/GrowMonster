@@ -54,7 +54,8 @@ public class GameManager : MonoBehaviour {
                     break;
 
                 case GameState.PREPARE:
-                    StartCoroutine(PrepareCoroutine(timeCount_));
+                    //StartCoroutine(PrepareCoroutine(timeCount_));
+                    PrepareCoroutine(timeCount_);
                     break;
 
                 case GameState.GROWING:
@@ -71,15 +72,14 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    IEnumerator PrepareCoroutine(int time)
+    public void PrepareCoroutine(int time)
     {
         Debug.Log("時間帯によってのアニメーション開始");
-        StartCoroutine(TimeAnimation(time));
+        TimeAnimation(time);
         SetCurrentState(GameState.GROWING);
-        yield break;
     }
 
-    IEnumerator TimeAnimation(int time_)
+    public void TimeAnimation(int time_)
     {
         if(time_ == (int)TimeState.A_M)
         {
@@ -94,7 +94,6 @@ public class GameManager : MonoBehaviour {
             sun.transform.rotation = transform.rotation * Quaternion.Euler(Vector3.Lerp(Vector3.zero, new Vector3(280.0f, 0.0f, 0.0f), 10.0f));
             Debug.Log("夜");
         }
-        yield return new WaitForSeconds(10);
 
     }
 
@@ -110,7 +109,11 @@ public class GameManager : MonoBehaviour {
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 timeCount_++;
-                dateCount_++;
+                if(timeCount_ > (int)TimeState.P_M)
+                {
+                    dateCount_++;
+                    timeCount_ = 0;
+                }
                 OnGameStateChanged(GameState.START);
             }
         }
