@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private int timeCount_ = 0;
 
+    public static bool dateBehaviour_ = false;
+
     private GameState currentState_;
 
     GameObject sun;
@@ -50,6 +52,7 @@ public class GameManager : MonoBehaviour {
             switch (state)
             {
                 case GameState.START:
+                    dateBehaviour_ = false;
                     SetCurrentState(GameState.PREPARE);
                     break;
 
@@ -100,21 +103,35 @@ public class GameManager : MonoBehaviour {
     void GrowingAction()
     {
         Debug.Log("育ててます");
+        // ここに育成スタートイベントを発生させる(もしくは普通に関数)
     }
 
     void Update()
     {
-        if (currentState_ == GameState.GROWING)
+        if (dateCount_ <= 3)
         {
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (currentState_ == GameState.GROWING)
             {
-                timeCount_++;
-                if(timeCount_ > (int)TimeState.P_M)
+                if (Input.GetKeyUp(KeyCode.Space))
                 {
-                    dateCount_++;
-                    timeCount_ = 0;
+                    timeCount_++;
+                    if (timeCount_ > (int)TimeState.P_M)
+                    {
+                        dateCount_++;
+                        timeCount_ = 0;
+                    }
+                    OnGameStateChanged(GameState.START);
                 }
-                OnGameStateChanged(GameState.START);
+                if (dateBehaviour_)
+                {
+                    timeCount_++;
+                    if (timeCount_ > (int)TimeState.P_M)
+                    {
+                        dateCount_++;
+                        timeCount_ = 0;
+                    }
+                    OnGameStateChanged(GameState.START);
+                }
             }
         }
     }

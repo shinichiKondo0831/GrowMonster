@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollisionManager : MonoBehaviour {
     public CharcterEvent collisionEvent_;
     public Training training_ = new Training();
+    private bool flag_ = false;
 
     void Start() {
         collisionEvent_ = new CharcterEvent();
@@ -18,6 +19,7 @@ public class CollisionManager : MonoBehaviour {
         if(other.gameObject.name == "Training")
         {
             Debug.Log("トレーニングに入ったよ");
+            flag_ = true;
             collisionEvent_.SetPlayerCollision(InvisibleGUI);
             collisionEvent_.ExecutionPlayerCollision();
         }
@@ -27,9 +29,20 @@ public class CollisionManager : MonoBehaviour {
         }
     }
 
+    void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.name == "Training")
+        {
+            Debug.Log("トレーニングに入ったよ");
+            flag_ = false;
+            collisionEvent_.SetPlayerCollision(InvisibleGUI);
+            collisionEvent_.ExecutionPlayerCollision();
+        }
+    }
+
     private void InvisibleGUI()
     {
-        training_.TestGUI();
+        training_.TestGUI(flag_);
     }
 
 
