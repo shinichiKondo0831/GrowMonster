@@ -9,7 +9,7 @@ public class PlayerInfo : MonoBehaviour {
     // csv読み込み行ったデータ格納コンテナ
     private List<string[]> csvData_ = new List<string[]>();
     // プレイヤーの内部データ
-    ShinHachi.PlayerStatus data_ = new ShinHachi.PlayerStatus();
+    public ShinHachi.PlayerStatus data_ = new ShinHachi.PlayerStatus();
 
     public ShinHachi.PlayerStatus Data
     {
@@ -48,4 +48,5 @@ public class PlayerInfo : MonoBehaviour {
     {
 
     }
+
 }

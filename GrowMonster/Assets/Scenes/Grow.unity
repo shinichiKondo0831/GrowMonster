@@ -745,6 +745,7 @@ GameObject:
   - component: {fileID: 2040763209}
   - component: {fileID: 2040763215}
   - component: {fileID: 2040763214}
+  - component: {fileID: 2040763217}
   - component: {fileID: 2040763216}
   m_Layer: 0
   m_Name: Player
@@ -842,7 +843,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2040763208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 488cdba97ca91d04791e3e9f2300287e, type: 3}
+  m_Script: {fileID: 11500000, guid: 558cd31c08c31a446bfe39bdd74894fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &2040763215
@@ -870,3 +871,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionEvent_: {fileID: 0}
   training_: {fileID: 79208422}
+--- !u!114 &2040763217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2040763208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 488cdba97ca91d04791e3e9f2300287e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

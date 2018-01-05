@@ -5,9 +5,15 @@ using UnityEngine;
 public class Training : MonoBehaviour {
     private const int Column_ = 40;
     private bool flag_ = false;
+    private Player player_ = new Player();
+
+    private int upPower = 3;
+    private int upHealth = 3;
+    private float upSpeed = 3;
+
     // Use this for initialization
     void Start () {
-
+        player_ = GetComponent<Player>();
 	}
 	
 	// Update is called once per frame
@@ -28,7 +34,7 @@ public class Training : MonoBehaviour {
     {
         if (flag_)
         {
-            var group = new Vector2(120, 250);
+            var group = new Vector2(150, 150);
 
             var screen = new Vector2(Screen.width, Screen.height);
 
@@ -38,17 +44,26 @@ public class Training : MonoBehaviour {
             GUI.BeginGroup(new Rect(groupX, groupY, group.x, group.y));
             GUI.Box(new Rect(0, 0, group.x, group.y), "トレーニングしましょう");
 
-            if (GUI.Button(new Rect(10, 30, 100, 30), "筋力を上げる"))
+            if (GUI.Button(new Rect(25, 30, 100, 30), "筋トレをする"))
             {
+                player_.Power += upPower;
+                Debug.Log("Power : ");
+                Debug.Log(player_.Power);
                 GameManager.dateBehaviour_ = true;
             }
-            if (GUI.Button(new Rect(10, 30 + Column_, 100, 30), "筋力を上げる"))
+            if (GUI.Button(new Rect(25, 30 + Column_, 100, 30), "ダッシュをする"))
             {
-
+                player_.Speed += upSpeed;
+                Debug.Log("Speed : ");
+                Debug.Log(player_.Speed);
+                GameManager.dateBehaviour_ = true;
             }
-            if (GUI.Button(new Rect(10, (30 + Column_) * 2, 100, 30), "筋力を上げる"))
+            if (GUI.Button(new Rect(25, 30 + Column_ * 2, 100, 30), "ランニングをする"))
             {
-
+                player_.Health += upHealth;
+                Debug.Log("Health : ");
+                Debug.Log(player_.Health);
+                GameManager.dateBehaviour_ = true;
             }
             GUI.EndGroup();
         }
