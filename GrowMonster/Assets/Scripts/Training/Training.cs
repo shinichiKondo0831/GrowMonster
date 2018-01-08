@@ -13,7 +13,8 @@ public class Training : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        player_ = GetComponent<Player>();
+        //player_ = GetComponent<Player>()/*.Data*/;
+        player_ = GetComponent<Player>().Data;
 	}
 	
 	// Update is called once per frame

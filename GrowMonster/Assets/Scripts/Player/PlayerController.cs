@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.position += transform.right * player_.Speed * Time.deltaTime;
+            //Debug.Log("移動スピード : ");
+            //Debug.Log(player_.Speed);
         }
 
         else if(Input.GetKey(KeyCode.LeftArrow))
@@ -38,4 +40,8 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public Player DataP
+    {
+        get { return player_; }
+    }
 }

@@ -63,7 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Models\Pixel Map Terrain\Scripts\PixelMapTerrain.cs" />
     <Compile Include="Assets\Scripts\Event\CharcterEvent.cs" />
+    <Compile Include="Assets\Scripts\Manager\BattleManager.cs" />
     <Compile Include="Assets\Scripts\Manager\CollisionManager\CollisionManager.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\Scripts\Manager\TimeProcessManager\TimeProcessManager.cs" />
@@ -73,6 +75,11 @@
     <Compile Include="Assets\Scripts\Player\PlayerStatus.cs" />
     <Compile Include="Assets\Scripts\Training\Training.cs" />
     <Compile Include="Assets\Scripts\Utility\CSVReader.cs" />
+    <Compile Include="Assets\Scripts\Utility\CSVWriter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Models\Pixel Map Terrain\README.txt" />
+    <None Include="Assets\Scripts\Shader\ToonShader.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

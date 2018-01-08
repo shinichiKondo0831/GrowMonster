@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
     private ShinHachi.PlayerStatus playerInfo_ = new ShinHachi.PlayerStatus();
-
+    //private Player player_ = new Player();
 	// Use this for initialization
 	void Start () {
         playerInfo_ = GetComponent<PlayerInfo>().Data;
@@ -17,6 +17,13 @@ public class Player : MonoBehaviour {
 
 
     // アクセッサ
+
+    public Player Data
+    {
+        get { return this; }
+    }
+
+
     public int Health
     {
         get { return playerInfo_.Health; }
