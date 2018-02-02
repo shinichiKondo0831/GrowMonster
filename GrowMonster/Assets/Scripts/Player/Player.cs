@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
     private ShinHachi.PlayerStatus playerInfo_ = new ShinHachi.PlayerStatus();
+    private GameObject obj_;
     //private Player player_ = new Player();
 	// Use this for initialization
 	void Start () {
+        obj_ = GameObject.Find("Slime_Green");
         playerInfo_ = GetComponent<PlayerInfo>().Data;
 	}
 	
@@ -18,9 +20,13 @@ public class Player : MonoBehaviour {
 
     // アクセッサ
 
-    public Player Data
+    public ShinHachi.PlayerStatus Data
     {
-        get { return this; }
+        get { return playerInfo_; }
+        set
+        {
+            playerInfo_ = value;
+        }
     }
 
 

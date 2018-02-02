@@ -10,8 +10,6 @@ public class PlayerInfo : MonoBehaviour {
     private List<string[]> csvData_ = new List<string[]>();
     // プレイヤーの内部データ
     public ShinHachi.PlayerStatus data_ = new ShinHachi.PlayerStatus();
-
-    CSVWriter write/* = new CSVWriter()*/;
     public ShinHachi.PlayerStatus Data
     {
         get { return data_;}
@@ -41,8 +39,6 @@ public class PlayerInfo : MonoBehaviour {
         data_.Health = int.Parse(csv_.OutputData()[0][(int)STATUS.HELTH]);
         data_.Speed = int.Parse(csv_.OutputData()[0][(int)STATUS.SPEED]);
         data_.Power = int.Parse(csv_.OutputData()[0][(int)STATUS.POWER]);
-        //.write = GetComponent<CSVWriter>();
-        write.CSVWritting(3,5);
         yield break;
     }
 

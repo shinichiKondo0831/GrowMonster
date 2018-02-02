@@ -27,6 +27,11 @@ public class CollisionManager : MonoBehaviour {
         {
             Debug.Log("アイテムを拾ったよ");
         }
+
+        if(other.gameObject.name == "Goal")
+        {
+
+        }
     }
 
     void OnCollisionExit(Collision other)

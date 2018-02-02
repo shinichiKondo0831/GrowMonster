@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // PlayerInfoのスクリプトを一緒にアタッチできるようにする
-[RequireComponent(typeof(PlayerInfo))]
+//[RequireComponent(typeof(PlayerInfo))]
 public class PlayerController : MonoBehaviour
 {
     Player player_ = new Player();

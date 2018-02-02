@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     [SerializeField]
@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour {
     private int timeCount_ = 0;
 
     public static bool dateBehaviour_ = false;
+
+    public Player player_ = new Player();
 
     private GameState currentState_;
 
@@ -72,6 +74,13 @@ public class GameManager : MonoBehaviour {
         else
         {
             Debug.Log("バトル開始まで遷移する");
+            float[] playerArray = new float[3];
+            playerArray[0] = player_.Health;
+            playerArray[1] = player_.Speed;
+            playerArray[2] = player_.Power;
+            CSVWriter write = new CSVWriter();
+            write.CSVWritting(3, playerArray);
+            SceneManager.LoadScene("Battle");
         }
     }
 

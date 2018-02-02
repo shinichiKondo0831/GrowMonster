@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Training : MonoBehaviour {
     private const int Column_ = 40;
     private bool flag_ = false;
-    private Player player_ = new Player();
+    public Player player_ = new Player();
 
     private int upPower = 3;
     private int upHealth = 3;
@@ -14,7 +15,7 @@ public class Training : MonoBehaviour {
     // Use this for initialization
     void Start () {
         //player_ = GetComponent<Player>()/*.Data*/;
-        player_ = GetComponent<Player>().Data;
+        //player_.Health = GetComponent<ShinHachi.PlayerStatus>().Health;
 	}
 	
 	// Update is called once per frame

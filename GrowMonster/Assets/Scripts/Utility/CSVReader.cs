@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class CSVReader : MonoBehaviour {
+public class CSVReader {
 
     private List<string[]> csvData_ = new List<string[]>();
 
